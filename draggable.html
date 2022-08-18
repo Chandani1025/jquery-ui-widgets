@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+    <style type="text/css">
+        #MyDiv,#MyHomeDiv,#MyHorizontalDiv,#MyVerticalDiv,#MyDivDisable,#MyThreeSecondsDelayDiv
+        {
+             width:100px; 
+             height:200px; 
+             padding:10px; 
+             background:rgb(0, 255, 132);
+             color:#ffffff;
+             font-size:large;
+             font-weight:inherit
+        }
+        #MyFiftyPixelDiv
+        {
+             width:300px; 
+             height:200px; 
+             padding:10px; 
+             background:rgb(64, 0, 255);
+             color:#ffffff;
+             font-size:large;
+             font-weight:bold
+        }
+        #MyHomeDiv,#MyHorizontalDiv,#MyVerticalDiv,#MyFiftyPixelDiv,#MyThreeSecondsDelayDiv
+        {
+            border:violet 3px #000000;
+        }
+     </style>
+       <script type="text/javascript">
+        $(document).ready(function () {
+            $("#MyDiv").draggable();
+
+            $("#MyHomeDiv span").draggable({
+                containment: "#MyHomeDiv"
+            });
+
+            $("#MyHorizontalDiv span").draggable({
+                axis: "x" 
+            });
+
+            $("#MyVerticalDiv span").draggable({
+                axis: "y"
+            });
+
+
+            $("#MyFiftyPixelDiv span").draggable({
+                distance: 200
+            });
+
+            $("#MyThreeSecondsDelayDiv span").draggable({
+                delay:3000
+            });
+            
+           });
+    </script>
+
+
+</head>
+<body>
+    <h1>draggable</h1>
+    <div id ="MyDiv">
+        <p>Hey</p>
+     </div>
+     
+     <hr />
+     
+     <div id="MyHomeDiv">
+        <span>This Is My Home And I Can Move Within It Only</span>
+     </div>
+     
+     <hr />
+
+     <div id="MyHorizontalDiv">
+        <span> Horizontaly move </span>
+     </div>
+     
+     <hr />
+
+     <div id="MyVerticalDiv">
+        <span> Verticaly move</span>
+     </div>
+
+     <hr />
+
+     <div id="MyThreeSecondsDelayDiv">
+        <span> After some Seconds than move it</span>
+     </div>
+
+     <hr />
+
+     <div id="MyFiftyPixelDiv">
+        <span>move than were is space given methat is After 200 PX</span>
+     </div>
+
+     <hr />
+
+    
+</body>
+</html>

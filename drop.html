@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropable</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        $("#123").draggable();
+        $("#dropzone").droppable({
+            drop: function(event, ui) {
+                $(this).css('background', 'rgb(0,200,0)');
+            },
+            over: function(event, ui) {
+                $(this).css('background', 'orange');
+            },
+            out: function(event, ui) {
+                $(this).css('background', 'cyan');
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-size: 32px;
+        }
+        
+        #dropzone {
+            top: 150px;
+            width: 500px;
+            height: 500px;
+            background: cyan;
+            border: solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <div>Drag img into the rectangle</div>
+    <img id="123" src="coding.png" draggable="true">
+    
+    <div id="dropzone"></div>
+    
+</body>
+</html>
